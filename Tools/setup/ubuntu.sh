@@ -114,10 +114,10 @@ echo
 echo "Installing PX4 Python3 dependencies"
 if [ -n "$VIRTUAL_ENV" ]; then
 	# virtual environments don't allow --user option
-	python -m pip install -r ${DIR}/requirements.txt
+	python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r ${DIR}/requirements.txt
 else
 	# older versions of Ubuntu require --user option
-	python3 -m pip install --user -r ${DIR}/requirements.txt
+	python3 -m pip install --user -i https://pypi.tuna.tsinghua.edu.cn/simple -r ${DIR}/requirements.txt
 fi
 
 # NuttX toolchain (arm-none-eabi-gcc)
